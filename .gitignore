@@ -52,7 +52,7 @@ app/.flutter-plugins-dependencies
 app/.packages
 app/.pub-cache/
 app/.pub/
-/build/
+app/build/
 
 # Web related
 app/lib/generated_plugin_registrant.dart
