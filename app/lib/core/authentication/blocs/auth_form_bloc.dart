@@ -106,6 +106,9 @@ class AuthFormBloc extends Bloc<AuthFormEvent, AuthFormState> {
             await _authenticationRepository.signup(
                 username: currentState.username,
                 password: currentState.password);
+            if (!state.isLogin) {
+              yield AuthFormSubmitSuccess();
+            }
           }
         } on AuthenticationException catch (ex) {
           yield AuthFormSubmitFailure(

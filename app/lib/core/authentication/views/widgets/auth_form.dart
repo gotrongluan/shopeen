@@ -111,7 +111,23 @@ class _AuthFormState extends State<AuthForm> {
         ),
       ),
       listener: (BuildContext context, AuthFormState state) {
-        if (state is AuthFormSubmitFailure) {
+        if (state is AuthFormSubmitSuccess) {
+          showDialog(
+            context: context,
+            builder: (_) => AlertDialog(
+              title: Text("Success"),
+              actions: <Widget>[
+                FlatButton(
+                  child: Text('Close me!'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                    context.bloc<AuthFormBloc>().add(AuthFormResetted());
+                  },
+                )
+              ],
+            ),
+          );
+        } else if (state is AuthFormSubmitFailure) {
           showDialog(
             context: context,
             builder: (_) => AlertDialog(

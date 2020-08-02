@@ -76,6 +76,10 @@ class AuthFormSubmitInProgress extends AuthFormState {
   }) : super(isLogin: isLogin);
 }
 
+class AuthFormSubmitSuccess extends AuthFormState {
+  const AuthFormSubmitSuccess();
+}
+
 class AuthFormSubmitFailure extends AuthFormState {
   final String message;
   const AuthFormSubmitFailure({
