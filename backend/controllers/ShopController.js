@@ -54,10 +54,10 @@ exports.postShop = [
         },
       });
       await shop.save();
-      const owner = await UserModel.findById(req.user._id);
-      console.log(owner.ownedShop);
-      owner.ownedShop.push(shop);
-      await owner.save();
+      // const owner = await UserModel.findById(req.user._id);
+      // console.log(owner.ownedShop);
+      // owner.ownedShop.push(shop);
+      // await owner.save();
       return apiResponse.successResponseWithData(res, 'Created', shop._id);
     } catch (err) {
       if (err.name === 'MongoError' && err.code === 11000) {

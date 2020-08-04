@@ -18,7 +18,6 @@ var ShopSchema = mongoose.Schema({
   category: { type: String, enum: ['food', 'beverage', 'clothes'] },
   description: { type: String },
   owner: { type: Schema.Types.ObjectId, ref: 'User' },
-  products: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
 });
 
 module.exports = mongoose.model('Shop', ShopSchema);

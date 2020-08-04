@@ -8,7 +8,6 @@ var UserSchema = new mongoose.Schema({
   password: { type: String, required: true },
   phoneNumber: { type: String },
   role: { type: String, enum: ['shopOwner', 'user'] },
-  ownedShop: [{ type: Schema.Types.ObjectId, ref: 'Shop' }],
 });
 
 // Virtual for user's full name
