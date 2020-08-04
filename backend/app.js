@@ -7,7 +7,7 @@ var indexRouter = require('./routes/index');
 var apiRouter = require('./routes/api');
 var apiResponse = require('./helpers/apiResponse');
 var cors = require('cors');
-
+var bodyParser = require('body-parser');
 // DB connection
 var MONGODB_URL = process.env.MONGODB_URL;
 var mongoose = require('mongoose');

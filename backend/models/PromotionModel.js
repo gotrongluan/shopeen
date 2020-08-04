@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 var PromotionSchema = mongoose.Schema({
-  category: { type: String, enum: ['disount', 'bogof'] },
+  name: { type: String, required: true, unique: true },
   description: { type: String },
 });
 
